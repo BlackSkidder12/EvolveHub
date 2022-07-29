@@ -1,0 +1,1281 @@
+local HWIDTable = loadstring(game:HttpGet("https://pastebin.com/raw/38Z77Bc3"))
+local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = Library:MakeWindow({Name = "EvolveHub - Booga Hybrid", HidePremium = true, SaveConfig = true, IntroEnabled = false, ConfigFolder = "OrionTest"})
+
+local KillAura = Window:MakeTab({
+    Name = "Kill Aura's",
+    Icon = "rbxassetid://448115998",
+    PremiumOnly = false
+})
+
+local Farming = Window:MakeTab({
+    Name = "Levels",
+    Icon = "rbxassetid://448145998",
+    PremiumOnly = false
+})
+
+local World = Window:MakeTab({
+    Name = "World-Visuals",
+    Icon = "rbxassetid://448115998",
+    PremiumOnly = false
+})
+
+local uiEsp = Window:MakeTab({
+    Name = "ui-Visuals",
+    Icon = "rbxassetid://44845998",
+    PremiumOnly = false
+})
+
+local PlayerEsp = Window:MakeTab({
+    Name = "Player-Visuals",
+    Icon = "rbxassetid://44845998",
+    PremiumOnly = false
+})
+
+local CritterEsp = Window:MakeTab({
+    Name = "Critter-Visuals",
+    Icon = "rbxassetid://44845998",
+    PremiumOnly = false
+})
+
+local DroppedItemEsp = Window:MakeTab({
+    Name = "Dropped Items",
+    Icon = "rbxassetid://44845998",
+    PremiumOnly = false
+})
+
+_G.SkiddedAura = false
+_G.LurkyBoiKill = false
+_G.AncientTreeKill = false
+_G.SmallTropicalTreeKill = false
+_G.WealthyGodKill = false
+_G.GreedyGoddessKill = false
+_G.StrangeMeteorKill = false
+_G.PenguinKill = false
+_G.BantaeKill = false
+_G.BantoKill = false
+_G.LilBantoKill = false
+_G.SnowyTreeKill = false
+_G.CandyCaneKill = false
+_G.ChillManKill = false
+_G.SunTreeKill = false
+_G.SnowyTreeKill = false
+_G.WatermelonPatchKill = false
+_G.LamiaKill = false
+_G.AkheilosKill = false
+_G.AutoIceCubes = false
+_G.CetusKill = false
+_G.SmallLavaTree = false
+_G.LavaTree = false
+_G.GreatWhite = false
+_G.DancingShelly = false
+_G.TropicalBush = false
+_G.LargeTropicalBush = false
+
+
+-- auto kills
+function SkiddedAura()    
+    while _G.SkiddedAura == true and game:GetService("RunService").Heartbeat:Wait() do game:GetService("RunService").RenderStepped:wait() do
+    local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer
+            
+    local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer
+        
+        
+    local function GetClosest()
+    local Character = LocalPlayer.Character
+    local HumanoidRootPart = Character and Character:FindFirstChild("HumanoidRootPart")
+    if not (Character or HumanoidRootPart) then return end
+        
+    local TargetDistance = math.huge
+    local Target
+        
+    for i,v in ipairs(Players:GetPlayers()) do
+    if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+    local TargetHRP = v.Character.HumanoidRootPart
+    local mag = (HumanoidRootPart.Position - TargetHRP.Position).magnitude
+    if mag < TargetDistance then
+    TargetDistance = mag
+    Target = v
+    end
+    end
+    end
+
+    return tostring(Target)
+    end
+    local autoatacktarget = GetClosest()
+    local args = {
+    [1] = {
+        ["location"] = nil --[[Vector1]],
+        ["weaponName"] = "The Meatmaker",
+        ["id"] = 1,
+        ["hit"] = game:GetService("Players")[autoatacktarget]
+    }
+}
+game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+end
+    end
+end
+
+function DancingShelly()
+     while _G.DancingShelly == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Critters["Dancing Shelly"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+    end
+
+
+function GreatWhite()
+    while _G.GreatWhite == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Sharks["Great White"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function SmallLavaTree()
+while _G.SmallLavaTree == true do
+    wait(0.0000001)
+    local args = {
+        [1] = {
+            ["location"] = nil --[[Vector1]],
+            ["weaponName"] = "The Meatmaker",
+            ["id"] = 1,
+            ["hit"] = workspace.Resources["Small Lava Tree"]
+        }
+    }
+    game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+end
+end
+
+
+function LavaTree()
+while _G.LavaTree == true do
+    wait(0.0000001)
+    local args = {
+        [1] = {
+            ["location"] = nil --[[Vector1]],
+            ["weaponName"] = "The Meatmaker",
+            ["id"] = 1,
+            ["hit"] = workspace.Resources["Lava Tree"]
+        }
+    }
+    game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+end
+end
+
+function LurkyBoiKill()
+    while _G.LurkyBoiKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Sharks["Lurky Boi"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function AkheilosKill()
+    while _G.AkheilosKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Sharks["Akheilos"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function LamiaKill()
+    while _G.LamiaKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Sharks["Lamia"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function CetusKill()
+    while _G.CetusKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Sharks["Cetus"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function PenguinKill()
+    while _G.PenguinKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Critters["Penguin"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function WatermelonPatchKill()
+    while _G.WatermelonPatchKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Watermelon Patch"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function AutoIceCubes()
+    while _G.AutoIceCubes == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Ice Chunk"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function BantaeKill()
+    while _G.BantaeKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Critters["Bantae"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function BantoKill()
+    while _G.BantoKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Critters["Banto"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function LilBantoKill()
+    while _G.LilBantoKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Critters["Lil Banto"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function ChillManKill()
+    while _G.ChillManKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Critters["Chillman"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function AncientTreeKill()
+    while _G.AncientTreeKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Ancient Tree"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function TropicalTreeKill()
+    while _G.TropicalTreeKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Tropical Tree"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function TropicalBushKill()
+    while _G.TropicalBushKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Tropical Bush"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+
+function LargeTropicalBushKill()
+    while _G.LargeTropicalBushKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Large Tropical Bush"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function SwollTreeKill()
+    while _G.SwollTreeKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Swoll Tree"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function SunTreeKill()
+    while _G.SunTreeKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Sun Tree"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function SmallTropicalTreeKill()
+    while _G.SmallTropicalTreeKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Small Tropical Tree"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function SnowyTreeKill()
+    while _G.SnowyTreeKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Small Snowy Tree"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+
+function SmallSnowyTreeKill()
+    while _G.SmallSnowyTreeKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Snowy Tree"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function CandyCaneKill()
+    while _G.CandyCaneKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Giant Candy Cane"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function WealthyGodKill()
+    while _G.WealthyGodKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Weathly God"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function GreedyGoddessKill()
+    while _G.GreedyGoddessKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Greedy Goddess"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+function StrangeMeteorKill()
+    while _G.StrangeMeteorKill == true do
+        wait(0.0000001)
+        local args = {
+            [1] = {
+                ["location"] = nil --[[Vector1]],
+                ["weaponName"] = "The Meatmaker",
+                ["id"] = 1,
+                ["hit"] = workspace.Resources["Strange Meteor"]
+            }
+        }
+        game:GetService("ReplicatedStorage").Events.Bow.Impact:FireServer(unpack(args))
+    end
+end
+
+-- world buttons
+
+
+
+KillAura:AddToggle({
+    Name = "Auto Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.SkiddedAura = Value
+        SkiddedAura()
+    end    
+})
+
+Farming:AddLabel("Shark Auto Kills")
+
+Farming:AddToggle({
+    Name = "Auto Lurky Boi Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.LurkyBoiKill = Value
+        LurkyBoiKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Lamia Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.LamiaKill = Value
+        LamiaKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Akheilos Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.LamiaKill = Value
+        LamiaKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Cetus Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.CetusKill = Value
+        CetusKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Great White Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.GreatWhite = Value
+        GreatWhite()
+    end    
+})
+
+Farming:AddLabel("Critter Auto Kills")
+
+Farming:AddToggle({
+    Name = "Auto Penguin Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.PenguinKill = Value
+        PenguinKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Dancing Shelly Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.DancingShelly = Value
+        DancingShelly()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Banto Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.BantoKill = Value
+        BantoKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Bantae Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.BantaeKill = Value
+        BantaeKill()
+    end    
+})
+
+
+Farming:AddToggle({
+    Name = "Auto Lil Banto Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.LilBantoKill = Value
+        LilBantoKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Chillman Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.ChillManKill = Value
+        ChillManKill()
+    end    
+})
+
+Farming:AddLabel("Ice/Stone Auto Kills")
+
+Farming:AddToggle({
+    Name = "Auto Ice Chunk Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoIceCubes = Value
+        AutoIceCubes()
+    end    
+})
+
+Farming:AddLabel("Tree Auto Kills")
+
+Farming:AddToggle({
+    Name = "Auto Ancient Tree Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.AncientTreeKill = Value
+        AncientTreeKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Tropical Tree Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.TropicalTreeKill = Value
+        TropicalTreeKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Tropical Bush Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.TropicalBushKill = Value
+        TropicalBushKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Large Tropical Bush Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.LargeTropicalBushKill = Value
+        LargeTropicalBushKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Swoll Tree Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.SwollTreeKill = Value
+        SwollTreeKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Small Tropical Tree Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.SmallTropicalTreeKill = Value
+        SmallTropicalTreeKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Sun Tree Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.SunTreeKill = Value
+        SunTreeKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Snowy Tree Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.SnowyTreeKill = Value
+        SnowyTreeKill()
+    end    
+})
+
+
+Farming:AddToggle({
+    Name = "Auto Small Snowy Tree Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.SmallSnowyTreeKill = Value
+        SmallSnowyTreeKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Small Lava Tree Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.SmallLavaTree = Value
+        SmallLavaTree()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Lava Tree Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.LavaTree = Value
+        LavaTree()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Candy Cane Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.CandyCaneKill = Value
+        CandyCaneKill()
+    end    
+})
+
+Farming:AddLabel("God/Meteor Auto Break")
+
+Farming:AddToggle({
+    Name = "Auto Weathly God Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.WealthyGodKill = Value
+        WealthyGodKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Greedy Goddess Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.GreedyGoddessKill = Value
+        GreedyGoddessKill()
+    end    
+})
+
+Farming:AddToggle({
+    Name = "Auto Strange Meteor Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.StrangeMeteorKill = Value
+        StrangeMeteorKill()
+    end    
+})
+-- night mode toggles
+
+World:AddButton({
+    Name = "NightMode",
+    Callback = function()
+              game.Lighting.TimeOfDay = 3
+            game.Lighting.Brightness = 0.10
+            game.Lighting.OutdoorAmbient = Color1.fromRGB(150,150,150)
+      end    
+})
+
+World:AddButton({
+    Name = "Fullbright",
+    Callback = function()
+              game.Lighting.GlobalShadows = nil
+      end    
+})
+
+Farming:AddLabel("Food Kill")
+
+Farming:AddToggle({
+    Name = "Auto Watermelon Patch Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.WatermelonPatchKill = Value
+        WatermelonPatchKill()
+    end    
+})
+
+World:AddButton({
+    Name = "Potato Graphics",
+    Callback = function()
+        if not game:IsLoaded() then
+            game.Loaded:Wait()
+            wait(10)
+        end
+         
+        local function check(inst)
+            local class = inst.ClassName
+            if class == "Decal" or class == "Texture" then 
+                inst.Texture = ""
+            elseif class == "SpecialMesh" then 
+                inst.TextureId = ""
+            elseif class == "ParticleEmitter" then
+                inst.Texture = ""
+                inst.Rate = 0
+            elseif inst:IsA("BasePart") then 
+                inst.Material = "SmoothPlastic"
+                inst.Reflectance = 0
+                inst.CastShadow = false
+                if class == "MeshPart" then 
+                    inst.TextureID = ""
+                    inst.CollisionFidelity = "Hull"
+                elseif class == "UnionOperation" then
+                    inst.CollisionFidelity = "Hull"
+                end
+                if inst.Anchored and inst.Size.Magnitude < 5 then
+                    inst.Transparency = 1
+                    inst.CanCollide = false
+                    --inst:Destroy()
+                end
+            end
+        end
+         
+        local function removeDups(children)
+            if #children > 99 then
+                local myname = tostring(game:GetService("Players").LocalPlayer)
+                local fake = {Name = myname}
+                for i=1,#children do
+                    local name1 = children[i].Name
+                    if name1 ~= myname and name1 ~= "Terrain" then
+                        local moved = false
+                        for j=i+1,#children do
+                            if children[j].Name == name1 then
+                                moved = true
+                                children[j].Parent = workspace.Terrain
+                                children[j] = fake
+                            end
+                        end
+                        if moved then 
+                            children[i].Parent = workspace.Terrain
+                        end
+                    end
+                end
+            end
+        end
+        
+        settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+        UserSettings():GetService("UserGameSettings").SavedQualityLevel = Enum.SavedQualitySetting.QualityLevel1
+        settings().Rendering.EagerBulkExecution = false
+        settings().Network.IncomingReplicationLag = -1000
+        
+        while true do
+            for _,v in ipairs(game:GetService("Lighting"):GetDescendants()) do
+                if v:IsA("PostEffect") then
+                    v.Enabled = false
+                end
+            end
+            local des = workspace:GetDescendants()
+            for i=1,#des do
+                check(des[i])
+            end
+            wait(0.3)
+            --faster dex
+            removeDups(workspace:GetChildren())
+         
+            wait(600)
+        end
+        
+        workspace:WaitForChild("Terrain")
+        workspace.Terrain.WaterReflectance = 0
+        workspace.Terrain.WaterWaveSize = 0
+        workspace.Terrain.WaterWaveSpeed = 0
+        workspace.Terrain.WaterTransparency = 0
+        
+        game:GetService("Lighting").GlobalShadows = false
+      end    
+})
+
+PlayerEsp:AddButton({
+    Name = "Name Esp",
+    Callback = function()
+        local esp_settings = { 
+            textsize = 8,
+            colour = 249, 169, 169
+            }
+            local gui = Instance.new("BillboardGui")
+            local esp = Instance.new("TextLabel",gui) 
+            gui.Name = "Cracked esp"; 
+            gui.ResetOnSpawn = false
+            gui.AlwaysOnTop = true;
+            gui.LightInfluence = 0;
+            gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+            esp.BackgroundColor3 = Color3.fromRGB(249, 169, 169);
+            esp.Text = ""
+            esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+            esp.BorderSizePixel = 4;
+            esp.BorderColor3 = Color3.new(esp_settings.colour)
+            esp.BorderSizePixel = 0
+            esp.Font = "GothamSemibold"
+            esp.TextSize = esp_settings.textsize
+            esp.TextColor3 = Color3.fromRGB(esp_settings.colour) -- text colour
+            
+            game:GetService("RunService").RenderStepped:Connect(function() ---- loops faster than a while loop :)
+            for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+                if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil  then -- craeting checks for team check, local player etc
+                    esp.Text = "{"..v.Name.."}"
+                    gui:Clone().Parent = v.Character.Head
+            end
+            end
+            end)
+    end
+})
+
+CritterEsp:AddLabel("Sharks")
+
+
+CritterEsp:AddButton({
+    Name = "Lurky Boi",
+    Callback = function()
+        for __,v in pairs(game.workspace.Sharks:GetDescendants()) do 
+            if v.Name == "Lurky Boi" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(127, 139, 136)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 10
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+CritterEsp:AddButton({
+    Name = "Great White",
+    Callback = function()
+        for __,v in pairs(game.workspace.Sharks:GetDescendants()) do 
+            if v.Name == "Great White" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(255, 255, 255)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 10
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+CritterEsp:AddButton({
+    Name = "Lamia",
+    Callback = function()
+        for __,v in pairs(game.workspace.Sharks:GetDescendants()) do 
+            if v.Name == "Lamia" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(234, 185, 255)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 10
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+CritterEsp:AddButton({
+    Name = "Cetus",
+    Callback = function()
+        for __,v in pairs(game.workspace.Sharks:GetDescendants()) do 
+            if v.Name == "Cetus" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(234, 185, 255)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 10
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+CritterEsp:AddLabel("Mammoths")
+
+CritterEsp:AddButton({
+    Name = "Snow Mammoth Esp",
+    Callback = function()
+        for __,v in pairs(game.workspace.Critters:GetDescendants()) do 
+            if v.Name == "Snow Mammoth" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(0, 255, 179)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 10
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+CritterEsp:AddButton({
+    Name = "Baby Snow Mammoth Esp",
+    Callback = function()
+        for __,v in pairs(game.workspace.Critters:GetDescendants()) do 
+            if v.Name == "Baby Snow Mammoth" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(0, 255, 179)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 10
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+CritterEsp:AddButton({
+    Name = "Sand Mammoth Esp",
+    Callback = function()
+        for __,v in pairs(game.workspace.Critters:GetDescendants()) do 
+            if v.Name == "Sand Mammoth" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(143, 98, 21)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 10
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+CritterEsp:AddButton({
+    Name = "Baby Sand Mammoth Esp",
+    Callback = function()
+        for __,v in pairs(game.workspace.Critters:GetDescendants()) do 
+            if v.Name == "Baby Sand Mammoth" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(143, 98, 21)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 10
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+-- dropped items 
+
+DroppedItemEsp:AddButton({
+    Name = "Stone Esp",
+    Callback = function()
+        for __,v in pairs(game.workspace.Items:GetDescendants()) do 
+            if v.Name == "Stone" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(125, 91, 91)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 20
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+DroppedItemEsp:AddButton({
+    Name = "Gold Bar Esp",
+    Callback = function()
+ for __,v in pairs(game.workspace.Items:GetDescendants()) do 
+            if v.Name == "Gold Bar" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim2.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim2.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(245, 212, 127)
+                c.Size = UDim2.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 20
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+      end    
+})
+
+DroppedItemEsp:AddButton({
+    Name = "Crystal Chunk Esp",
+    Callback = function()
+        for __,v in pairs(game.workspace.Items:GetDescendants()) do 
+            if v.Name == "Crystal Chunk" then 
+                local a = Instance.new("BillboardGui",v) 
+                a.Size = UDim1.new(1,1,1)
+                a.AlwaysOnTop = true
+                local b = Instance.new("Frame",a)
+                b.Size = UDim1.new(1,1,1)
+                b.BackgroundTransparency = 1
+                b.BorderSizePixel = 0
+                local c = Instance.new('TextLabel',b)
+                c.TextColor3 = Color3.fromRGB(0, 15, 155)
+                c.Size = UDim1.new(1,0,1,1)
+                c.BorderSizePixel = 0
+                c.TextSize = 10
+                c.Text = v.Name
+                c.BackgroundTransparency = 10 
+                c.Font = Enum.Font.SciFi 
+            end
+        end
+        
+      end    
+})
+
+uiEsp:AddButton({
+    Name = "No Key Bind Uis",
+    Callback = function()
+        game:GetService("Players").AffinityEvo.PlayerGui["MainGui-2019"].Panels.List.Bag.KeyImage.Visible = false
+        game:GetService("Players").AffinityEvo.PlayerGui["MainGui-2019"].Panels.List.Settings.KeyImage.Visible = false
+        game:GetService("Players").AffinityEvo.PlayerGui["MainGui-2019"].Panels.List.Shop.KeyImage.Visible = false
+        game:GetService("Players").AffinityEvo.PlayerGui["MainGui-2019"].Panels.List.Shop.KeyImage.Visible = false
+        game:GetService("Players").AffinityEvo.PlayerGui["MainGui-2019"].Panels.List.Shop.KeyImage.Visible = false
+        game:GetService("Players").AffinityEvo.PlayerGui["MainGui-2019"].Panels.List.ItemCreator.KeyImage.Visible = false
+        game:GetService("Players").AffinityEvo.PlayerGui["MainGui-2019"].Panels.List.Quests.KeyImage.Visible = false
+        game:GetService("Players").AffinityEvo.PlayerGui["MainGui-2019"].Panels.List.Quests.KeyImage.Visible = false
+      end    
+})
+
+uiEsp:AddButton({
+    Name = "No Coin Lag",
+    Callback = function()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            for _,v in next, game.Players.LocalPlayer.PlayerGui["MainGui-2019"].TempEffects.Coins:GetChildren() do
+                v:Destroy()
+            end
+        end)
+      end    
+})
